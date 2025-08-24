@@ -14,7 +14,8 @@ if [ "$OS_CHOICE" == "amazon" ]; then
     --owners amazon \
     --filters "Name=name,Values=amzn2-ami-hvm-*-x86_64-gp2" \
     --query "Images | sort_by(@, &CreationDate)[-1].ImageId" \
-    --output text)
+    --output text \
+	--region "eu-central-1")
 elif [ "$OS_CHOICE" == "ubuntu" ]; then
   echo "🔎 Recherche de la dernière AMI Ubuntu 22.04 LTS..."
   AMI_ID=$(aws ec2 describe-images \
@@ -22,7 +23,7 @@ elif [ "$OS_CHOICE" == "ubuntu" ]; then
     --filters "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*" \
     --query "Images | sort_by(@, &CreationDate)[-1].ImageId" \
     --output text \
-	--region eu-central-1)
+	--region eu-central-1 )
 else
   echo "❌ Choix OS invalide (utilise 'amazon' ou 'ubuntu')"
   exit 1
