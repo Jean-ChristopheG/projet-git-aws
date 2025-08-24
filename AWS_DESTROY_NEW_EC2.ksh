@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # === Paramètres à adapter ===
-KEY_NAME="JGDKeyPair"        # Nom de ta clé SSH existante
-SUBNET_ID="subnet-837ac4fe"          # ID de ton subnet
-SECURITY_GROUP_ID="sg-17e0547a"      # ID du groupe de sécurité
-INSTANCE_TYPE="t2.micro"                      # Type d'instance
-OS_CHOICE="amazon"                            # "amazon" ou "ubuntu"
+KEY_NAME="JGDKeyPair"        	# Nom de ta clé SSH existante
+SUBNET_ID="subnet-837ac4fe"     # ID de ton subnet
+INSTANCE_ID=$1
+SECURITY_GROUP_ID=$2    		# ID du groupe de sécurité
+INSTANCE_TYPE="t2.micro"        # Type d'instance
+OS_CHOICE="amazon"              # "amazon" ou "ubuntu"
 
 # === Fonction pour détruire une instance ===
 destroy_instance() {
-  INSTANCE_ID="i-0f3b08559f93e9aa3"
-  if [ -z "$INSTANCE_ID" ]; then
+    if [ -z "$INSTANCE_ID" ]; then
     echo "❌ Merci de préciser l’Instance ID :"
     exit 1
   fi
@@ -26,5 +26,5 @@ destroy_instance() {
    
     echo "⚙️ Usage :"
     echo "   destroy_instance  # Détruire une instance"
-	destroy_instance
+	destroy_instance $INSTANCE_ID
 
