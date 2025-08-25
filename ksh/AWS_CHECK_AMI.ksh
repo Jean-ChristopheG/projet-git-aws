@@ -1,5 +1,5 @@
 
-#!/usr/bin/ksh
+#!/bin/bash
 
 # Obtenir toutes les AMI Amazon Linux 2 disponibles dans la région eu-central-1
 aws ec2 describe-images --owners amazon \
