@@ -10,9 +10,9 @@ fi
 
 
 # === Paramètres à adapter ===
-KEY_NAME="JGDKeyPair"        # Nom de ta clé SSH existante
-SUBNET_ID=$1          # ID de ton subnet
-SECURITY_GROUP_ID=$2      # ID du groupe de sécurité
+KEY_NAME="my-new-key.pm"        # Nom de ta clé SSH existante
+SUBNET_ID=$1          # ID de ton subnet : subnet-024e768270223fb40
+SECURITY_GROUP_ID=$2      # ID du groupe de sécurité   : sg-0557aee05416e693b
 INSTANCE_TYPE="t2.micro"                      # Type d'instance
 OS_CHOICE="amazon"                            # "amazon" ou "ubuntu"
 

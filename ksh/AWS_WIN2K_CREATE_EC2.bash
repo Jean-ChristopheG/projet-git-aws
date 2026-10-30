@@ -2,7 +2,7 @@
 set -e
 
 ### --- VARIABLES ---
-REGION=us-east-1             # adapte si nécessaire
+REGION=eu-central-1            # adapte si nécessaire
 KEY_NAME=MyWindowsKey
 SEC_GROUP=WinSecGroup
 INSTANCE_NAME=WinFreeTier
